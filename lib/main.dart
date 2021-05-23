@@ -34,12 +34,10 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     final _questions = const [
       {
-        'questionText': 'What\'s your favorite color?',
-        'answers': ['Black', 'Red'],
+        'questionText': 'This is 1st Text',
       },
       {
-        'questionText': 'What\'s your favorite Animal?',
-        'answers': ['Dog', 'Cat'],
+        'questionText': 'This is 2nd Text',
       },
     ];
 
@@ -57,7 +55,7 @@ class _MyAppState extends State<MyApp> {
                 child: Column(
                   children: <Widget>[
                     RaisedButton(
-                      child: Text('Reset Quiz'),
+                      child: Text('Reset'),
                       onPressed: _resetQuiz,
                     ),
                   ],

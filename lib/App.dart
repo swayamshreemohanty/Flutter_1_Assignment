@@ -19,9 +19,7 @@ class App extends StatelessWidget {
         TextControl(
           questions[questionIndex]['questionText'],
         ),
-        ...(questions[questionIndex]['answers'] as List<String>).map((answer) {
-          return Texts(answerQuestion, answer);
-        }).toList()
+        Texts(answerQuestion),
       ],
     );
   }

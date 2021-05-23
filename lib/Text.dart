@@ -3,9 +3,9 @@ import './Text_control.dart';
 
 class Texts extends StatelessWidget {
   final Function filehandler;
-  final String texthandler;
+  final String texthandler = "TAP";
 
-  Texts(this.filehandler, this.texthandler);
+  Texts(this.filehandler);
 
   @override
   Widget build(BuildContext context) {
