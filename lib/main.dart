@@ -4,7 +4,7 @@
 // 3) Split the app into three widgets: App, TextControl & Text
 
 import 'package:flutter/material.dart';
-import './Text_control.dart';
+import './App.dart';
 
 void main() => runApp(MyApp());
 
@@ -32,28 +32,27 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    var questions = [
-      'What\'s your favorite color?',
-      'What\'s your favorite Animal?',
+    final _questions = const [
+      {
+        'questionText': 'What\'s your favorite color?',
+        'answers': ['Black', 'Red'],
+      },
+      {
+        'questionText': 'What\'s your favorite Animal?',
+        'answers': ['Dog', 'Cat'],
+      },
     ];
+
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
           title: Text("1st Assignment App"),
         ),
-        body: _questionIndex < questions.length
-            ? Column(
-                children: [
-                  // Text(questions[_questionIndex]),
-                  TextControl(
-                    questions[_questionIndex],
-                  ),
-                  RaisedButton(
-                    child: Text("Tap"),
-                    onPressed: _answerQuestion,
-                  ),
-                ],
-              )
+        body: _questionIndex < _questions.length
+            ? App(
+                answerQuestion: _answerQuestion,
+                questionIndex: _questionIndex,
+                questions: _questions)
             : Center(
                 child: Column(
                   children: <Widget>[
